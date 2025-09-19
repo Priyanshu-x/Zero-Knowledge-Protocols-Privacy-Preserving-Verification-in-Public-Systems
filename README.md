@@ -23,5 +23,5 @@ To shift social trust and influence metrics from centralized platforms to transp
 - Social graph analytics and visualization
 
 ## 📜 Contract Details
-0x27267520625dD7E39aeC5aDA50A7c1E4ae3420bf
+0x12E998051EF14A95Aa6f159D877438A47E5f5A95
 ![alt text](image.png)
