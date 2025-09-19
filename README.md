@@ -24,4 +24,5 @@ To shift social trust and influence metrics from centralized platforms to transp
 
 ## 📜 Contract Details
 0x12E998051EF14A95Aa6f159D877438A47E5f5A95
-![alt text](image.png)
+![alt text](<img width="1919" height="917" alt="image" src="https://github.com/user-attachments/assets/1d7ba460-fbb2-40b5-87a4-4a699c786917" />
+)
