@@ -114,6 +114,6 @@ We welcome contributions from the cryptography and blockchain communities. Pleas
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contracts Details
-0x12E998051EF14
+0x12E998051EF14A95Aa6f159D877438A47E5f5A95
 <img width="1919" height="917" alt="Screenshot 2025-09-19 214445" src="https://github.com/user-attachments/assets/c5ab33fb-b6ae-4ee6-98cd-91b830096744" />
 A95Aa6f159D877438A47E5f5A95
