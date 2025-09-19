@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Knowledge Protocols | Privacy-Preserving Verification</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.1/ethers.umd.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🔐 ZK Protocol</h1>
+                <button id="connectWallet" class="connect-btn">Connect Wallet</button>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Zero-Knowledge Protocols</h1>
+                <p>Privacy-Preserving Verification in Public Systems</p>
+                <div class="status-indicators">
+                    <div class="status-item">
+                        <span class="status-label">Wallet:</span>
+                        <span id="walletStatus" class="status-value">Not Connected</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Network:</span>
+                        <span id="networkStatus" class="status-value">Unknown</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- User Dashboard -->
+            <section class="dashboard">
+                <h2>🛡️ Verification Dashboard</h2>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Secret Status</h3>
+                        <p id="secretStatus" class="status">No commitment found</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Verification Status</h3>
+                        <p id="verificationStatus" class="status">Not verified</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Age Verification</h3>
+                        <p id="ageStatus" class="status">Not verified</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Functions -->
+            <div class="functions-grid">
+                <!-- Function 1: Secret Commitment -->
+                <section class="function-card">
+                    <div class="function-header">
+                        <h2>🔒 Secret Commitment</h2>
+                        <p>Commit to a secret without revealing it</p>
+                    </div>
+                    <form id="commitForm" class="function-form">
+                        <div class="input-group">
+                            <label for="secret">Secret Message:</label>
+                            <input type="text" id="secret" placeholder="Enter your secret..." required>
+                        </div>
+                        <div class="input-group">
+                            <label for="nonce">Nonce (Random Number):</label>
+                            <input type="number" id="nonce" placeholder="Enter a random number..." required>
+                            <button type="button" id="generateNonce" class="secondary-btn">Generate Random</button>
+                        </div>
+                        <button type="submit" class="primary-btn">Commit Secret</button>
+                    </form>
+                    <div id="commitResult" class="result-display"></div>
+                </section>
+
+                <!-- Function 2: Proof Verification -->
+                <section class="function-card">
+                    <div class="function-header">
+                        <h2>✅ Proof Verification</h2>
+                        <p>Prove knowledge of your secret</p>
+                    </div>
+                    <form id="verifyForm" class="function-form">
+                        <div class="input-group">
+                            <label for="verifySecret">Secret Message:</label>
+                            <input type="text" id="verifySecret" placeholder="Enter your original secret..." required>
+                        </div>
+                        <div class="input-group">
+                            <label for="verifyNonce">Nonce:</label>
+                            <input type="number" id="verifyNonce" placeholder="Enter your original nonce..." required>
+                        </div>
+                        <button type="submit" class="primary-btn">Verify Proof</button>
+                    </form>
+                    <div id="verifyResult" class="result-display"></div>
+                </section>
+
+                <!-- Function 3: Age Verification -->
+                <section class="function-card">
+                    <div class="function-header">
+                        <h2>🎯 Age Verification</h2>
+                        <p>Prove you meet age requirements privately</p>
+                    </div>
+                    <form id="ageForm" class="function-form">
+                        <div class="input-group">
+                            <label for="ageProof">Age Proof (18+ required):</label>
+                            <input type="number" id="ageProof" min="18" max="100" placeholder="Enter your age..." required>
+                        </div>
+                        <div class="input-group">
+                            <label for="merkleRoot">Merkle Root (Verification ID):</label>
+                            <input type="text" id="merkleRoot" placeholder="Auto-generated" readonly>
+                            <button type="button" id="generateMerkle" class="secondary-btn">Generate ID</button>
+                        </div>
+                        <button type="submit" class="primary-btn">Verify Age</button>
+                    </form>
+                    <div id="ageResult" class="result-display"></div>
+                </section>
+            </div>
+
+            <!-- Transaction History -->
+            <section class="transaction-history">
+                <h2>📋 Recent Transactions</h2>
+                <div id="transactionList" class="transaction-list">
+                    <p class="no-transactions">No transactions yet. Connect your wallet and start verifying!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Zero-Knowledge Protocols</h4>
+                    <p>Privacy-preserving verification for the decentralized web</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Secret Commitments</li>
+                        <li>Proof Verification</li>
+                        <li>Privacy Protection</li>
+                        <li>Blockchain Security</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li>Ethereum Smart Contracts</li>
+                        <li>Web3 Integration</li>
+                        <li>Cryptographic Proofs</li>
+                        <li>Zero-Knowledge Concepts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ZK Protocol Project. Built for privacy and security.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Processing transaction...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
